@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Student Management System</title>
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+	crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+
+	<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="javascript:void(0)">Student
+				Management System</a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#mynavbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		</div>
+	</nav>
+	<br>
+	<br>
+	<div class="container">
+		<div class="row">
+			<div
+				class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class="text-cenetr">Create New Student</h1>
+				<div class="card-body">
+					<form th:action="@{/students}" th:object="${student}" method="POSt">
+
+						<div class="form-group">
+							<label>Student First Name</label> <input type="text"
+								name="firstName" th:field="*{firstName}"
+								placeholder="Enter Students First Name" class="form-control">
+						</div>
+
+						<div class="form-group">
+							<label>Student Last Name</label> <input type="text"
+								name="lastName" th:field="*{lastName}"
+								placeholder="Enter Students Last Name" class="form-control">
+						</div>
+
+						<div class="form-group">
+							<label>Email</label> <input type="text" name="email"
+								th:field="*{email}" placeholder="Enter Students Email"
+								class="form-control">
+						</div>
+
+						<div class="box-footer">
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
